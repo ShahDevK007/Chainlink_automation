@@ -1,12 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const fs = require('fs')
+var cors = require('cors')
 const fileUpload = require('express-fileupload')
 const app = express()
 const port = 3000
 const dir = './'
 require('./db')
 app.use(bodyParser.json())
+app.use(cors())
 // import connection from './db'
 
 app.post('/api/createFile', (req, res) => {
